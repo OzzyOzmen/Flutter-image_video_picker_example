@@ -21,8 +21,7 @@ class CameraButtonWidget extends StatelessWidget {
         : ImagePicker().getVideo;
 
     final media = await getMedia(source: ImageSource.camera);
-   final file = File(media.path); 
-    //final file = File(media?.path?? Icon(Icons.photo, size: 120)).toString();
+   final file = File(media?.path?? SourcePage().toString());
 
     Navigator.of(context).pop(file);
   }
